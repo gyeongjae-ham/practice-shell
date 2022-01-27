@@ -79,3 +79,7 @@ $#（인수의 수）: 3
 "$@": "first second third"
 0
 ```
+
+> 더 많은 내용 확인하려면 블로그에서 읽기
+
+https://velog.io/@hiyee-gj/bash-%EA%B3%B5%EB%B6%80
