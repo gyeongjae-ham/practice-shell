@@ -1,13 +1,6 @@
 #!/bin/bash
 
 baseDirectory="/data/htdoc"
-projectName="rainbow.co.kr-www.new"
-cmdFileName=""
+projectName="new-email.rainbow.co.kr-email"
 
-pid=`ps axf | grep "${projectName}/${cmdFileName}" | grep -v grep | awk '{print $1}'`
-if [ ! -z "$pid" ]; then
-        echo "kill rainbow.co.kr-www.new ${pid}"
-        kill -9 $pid
-        sleep 0.5
-fi
-
+cd ${baseDirectory}/${projectName} && pm2 restart new-email
