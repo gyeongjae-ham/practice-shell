@@ -15,3 +15,10 @@ then
 else
     echo "1번째 인수가 2번째 인수보다 작다"
 fi
+
+requestRepositoryDirectory=$1
+baseDirectory=/data/path
+
+if [ $requestRepositoryDirectory == "node-webhook" ]; then
+    echo "${requestRepositoryDirectory} restart!!"
+    cd $baseDirectory/$requestRepositoryDirectory && pm2 restart new-email
