@@ -19,6 +19,12 @@ fi
 requestRepositoryDirectory=$1
 baseDirectory=/data/path
 
-if [ $requestRepositoryDirectory == "node-webhook" ]; then
+if [ $requestRepositoryDirectory == "new-email" ]; then
     echo "${requestRepositoryDirectory} restart!!"
     cd $baseDirectory/$requestRepositoryDirectory && pm2 restart new-email
+elif [ $requestRepositoryDirectory == "new.rainbow.co.kr" ]; then
+    echo "${requestRepositoryDirectory} restart!!"
+    cd $baseDirectory/$requestRepositoryDirectory && pm2 restart new.rainbow.co.kr
+elif [ $requestRepositoryDirectory == "node-webhook" ]; then
+    echo "${requestRepositoryDirectory} restart!!"
+    cd $baseDirectory/$requestRepositoryDirectory && sh restart-node-webhook.sh
