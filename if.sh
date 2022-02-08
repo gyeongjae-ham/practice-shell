@@ -28,3 +28,4 @@ elif [ $requestRepositoryDirectory == "new.rainbow.co.kr" ]; then
 elif [ $requestRepositoryDirectory == "node-webhook" ]; then
     echo "${requestRepositoryDirectory} restart!!"
     cd $baseDirectory/$requestRepositoryDirectory && sh restart-node-webhook.sh
+fi
