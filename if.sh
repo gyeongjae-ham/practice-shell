@@ -24,8 +24,15 @@ if [ ${requestRepositoryDirectory} == "node-webhook" ]; then
         cd ${baseDirectory} && sh restart-node-webhook.sh
 elif [ ${requestRepositoryDirectory} == "new-email.rainbow.co.kr-email" ]; then
         echo "${requestRepositoryDirectory} restart"
-        cd ${baseDirectory} && sh restart-new-email.sh
+        cd ${baseDirectory}/${requestRepositoryDirectory}
+        npm run build
+        cd ..
+        sh restart-new-email.sh
+
 elif [ ${requestRepositoryDirectory} == "rainbow.co.kr-www-new" ]; then
         echo "${requestRepositoryDirectory} restart"
-        cd ${baseDirectory} && sh restart-homepage.sh
+        cd ${baseDirectory}/${requestRepositoryDirectory}
+        npm run build
+        cd ..
+        sh restart-homepage.sh
 fi
