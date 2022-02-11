@@ -26,13 +26,12 @@ elif [ ${requestRepositoryDirectory} == "new-email.rainbow.co.kr-email" ]; then
         echo "${requestRepositoryDirectory} restart"
         cd ${baseDirectory}/${requestRepositoryDirectory}
         npm run build
-        cd ..
-        sh restart-new-email.sh
-
+        pm2 restart # project
+        pm2 save
 elif [ ${requestRepositoryDirectory} == "rainbow.co.kr-www-new" ]; then
         echo "${requestRepositoryDirectory} restart"
         cd ${baseDirectory}/${requestRepositoryDirectory}
         npm run build
-        cd ..
-        sh restart-homepage.sh
+        pm2 restart # project\
+        pm2 save
 fi
