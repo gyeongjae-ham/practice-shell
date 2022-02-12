@@ -32,6 +32,6 @@ elif [ ${requestRepositoryDirectory} == "rainbow.co.kr-www-new" ]; then
         echo "${requestRepositoryDirectory} restart"
         cd ${baseDirectory}/${requestRepositoryDirectory}
         npm run build
-        pm2 restart # project\
+        pm2 restart # project Name
         pm2 save
 fi
