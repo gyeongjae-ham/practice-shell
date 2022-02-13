@@ -25,12 +25,14 @@ if [ ${requestRepositoryDirectory} == "node-webhook" ]; then
 elif [ ${requestRepositoryDirectory} == "new-email.rainbow.co.kr-email" ]; then
         echo "${requestRepositoryDirectory} restart"
         cd ${baseDirectory}/${requestRepositoryDirectory}
+        npm install
         npm run build
-        pm2 restart # project
+        pm2 restart # project Name
         pm2 save
 elif [ ${requestRepositoryDirectory} == "rainbow.co.kr-www-new" ]; then
         echo "${requestRepositoryDirectory} restart"
         cd ${baseDirectory}/${requestRepositoryDirectory}
+        npm install
         npm run build
         pm2 restart # project Name
         pm2 save
