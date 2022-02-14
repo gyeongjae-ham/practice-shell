@@ -16,6 +16,8 @@ else
     echo "1번째 인수가 2번째 인수보다 작다"
 fi
 
+# 직접 실행시키면 작동하는데 icrond로 받아서 작동할 때는 작동안하는 이유 찾아내기
+
 requestRepositoryDirectory=$1
 baseDirectory=/data/path
 
