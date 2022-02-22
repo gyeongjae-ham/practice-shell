@@ -3,4 +3,9 @@
 baseDirectory="/data/htdoc"
 projectName="rainbow.co.kr-email-www-new"
 
-pm2 start npm --name "${ProjectName}" -- run start
+cd ${baseDirectory}/${projectName}
+npm ci
+npm run build
+pm2 restart new-homepage
+pm2 save
+exit 0
